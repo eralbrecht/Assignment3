@@ -5,7 +5,7 @@ using namespace std;
 class GenStack
 {
 public:
-	GenStack(); //default constructor
+	GenStack(int maxSize); //default constructor
 	~GenStack(); //destructor
 	//functions
 	//were making a stack that will store chars

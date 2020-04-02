@@ -2,8 +2,11 @@ using namespace std;
 using "GenStack.h"
 int main()
 {
-	countingStack = GenStack::GenStack();
+	//countingStack = GenStack::GenStack();
+	countingStack GenStack;
+	countingStack.GenStack(500);
 	int lineCount = 0;
+	//int maxSize = 500;
 	for (i = 0; i < analysisString.size(); i++)
 	{
 		char currLett = analysisString[i];
