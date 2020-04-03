@@ -3,14 +3,14 @@ using namespace std;
 //constructor(im really hoping that we never have a nest 500 deep...)
 GenStack::GenStack()
 {
-	myStack = new char[500];
+	char myStack = new char[500];
 	maxSize = 500;
 	top = -1;
 }
 //destructor
 GenStack::~GenStack()
 {
-	delete myStack;
+	//delete myStack;
 }
 void GenStack::push(char data)
 {

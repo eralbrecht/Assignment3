@@ -1,9 +1,10 @@
-include<iostream>
+#include<iostream>
+#include<fstream>
 using namespace std;
 class Checker
 {
 public:
 		Checker(); //constructor
 		~Checker(); //constructor
-		void synCheck(ifsteam readFile);		
+		void synCheck(ifstream &readFile);		
 };

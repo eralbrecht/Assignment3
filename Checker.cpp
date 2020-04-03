@@ -1,7 +1,8 @@
-using namespace std;
-using "GenStack.h"
-using "Checker.h"
 #include <iostream>
+using namespace std;
+#include "GenStack.h"
+#include "Checker.h"
+#include<fstream>
 Checker::Checker()
 {
 	//constructor
@@ -10,12 +11,14 @@ Checker::~Checker()
 {
 	//destructor
 }
-int Checker::synCheck(ifstream readFile)
+void Checker::synCheck(ifstream &readFile)
 {
 	//countingStack = GenStack::GenStack();
 	GenStack countingStack;
 	//countingStack.GenStack(500);
 	int lineCount = 0;
+	string currString;
+	char currLett;
 	//int maxSize = 500;
 	//for (i = 0; i < analysisString.size(); i++)
 	while(getline(readFile, currString))
@@ -25,9 +28,10 @@ int Checker::synCheck(ifstream readFile)
 		{
 			lineCount += 1;
 		}*/
-		linecount += 1;
-		for (i = 0; i < currString.size(); i++)
+		lineCount += 1;
+		for (int i = 0; i < currString.size(); i++)
 		{
+			currLett = currString[i];
 			if (currLett == '[' || currLett == '{' || currLett == '(')
 			{
 				countingStack.push(currLett);
@@ -36,39 +40,39 @@ int Checker::synCheck(ifstream readFile)
 			{
 				if (countingStack.peek() == '[')
 				{
-					countingStack.pop()
+					countingStack.pop();
 				}
 				else
 				{
 					//quitfunction
 					cout << "line : " << lineCount << endl;
-					cout << "there is a ] that was never opened"
+					cout << "there is a ] that was never opened";
 				}
 			}
 			if (currLett == '}')
 			{
 				if (countingStack.peek() == '{')
 				{
-					countingStack.pop()
+					countingStack.pop();
 				}
 				else
 				{
 					//return (1)
 					cout << "line : " << lineCount << endl;
-					cout<<"there is a } that was never opened"
+					cout << "there is a } that was never opened";
 				}
 			}
 			if (currLett == ')')
 			{
 				if (countingStack.peek() == '(')
 				{
-					countingStack.pop()
+					countingStack.pop();
 				}
 				else
 				{
 					//quitfunction
 					cout << "line : " << lineCount << endl;
-					cout << "there is a ) that was never opened"
+					cout << "there is a ) that was never opened";
 				}
 			}
 		}
