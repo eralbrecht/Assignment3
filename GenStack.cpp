@@ -3,7 +3,8 @@ using namespace std;
 //constructor(im really hoping that we never have a nest 500 deep...)
 GenStack::GenStack()
 {
-	char myStack = new char[500];
+	//char myStack[500];
+	myStack = new char[500];
 	maxSize = 500;
 	top = -1;
 }
@@ -12,7 +13,7 @@ GenStack::~GenStack()
 {
 	//delete myStack;
 }
-void GenStack::push(char data)
+void GenStack::push(char d)
 {
 	if (top > 500)
 	{
@@ -21,8 +22,8 @@ void GenStack::push(char data)
 	}
 	else
 	{
-		myStack[++top] = data;
-		myStack[++top] = data;
+		//myStack[++top] = d;
+		myStack[++top] = d;
 		//each time we increment and add an element our top will shift over 1
 	}
 }
