@@ -1,6 +1,7 @@
 #include "GenStack.h"
+using namespace std;
 //constructor(im really hoping that we never have a nest 500 deep...)
-GenStack::GenStack(int maxSize)
+GenStack::GenStack()
 {
 	myStack = new char[500];
 	maxSize = 500;

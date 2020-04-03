@@ -1,63 +1,32 @@
-using namespace std;
+using "Checker.h"
 using "GenStack.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
 int main()
 {
-	//countingStack = GenStack::GenStack();
-	countingStack GenStack;
-	countingStack.GenStack(500);
-	int lineCount = 0;
-	//int maxSize = 500;
-	for (i = 0; i < analysisString.size(); i++)
+	//create an instance of the checker
+	Checker myCheck;
+	char analysis = 'y';
+	string filename;
+	while (analysis == 'y')
 	{
-		char currLett = analysisString[i];
-		if (currLett == '\n')
+		//open the file we want read
+		cout << "input the file name for analysis";
+		cin >> filename;
+		ifsteam inputfile;
+		inputfile.open(filename);
+		//create an instance of the checker
+		Checker myCheck;
+		if (inputfile)
 		{
-			lineCount += 1;
+			myCheck.synCheck(inputfile);
 		}
-		if (currLett == '[' || currLett == '{' || currLett == '(')
+		else()
 		{
-			countingStack.push(currLett);
+			cout << "that file doesnt exist"
 		}
-		if (currLett == ']')
-		{
-			if (countingStack.peek() == '[')
-			{
-				countingStack.pop()
-			}
-			else
-			{
-				//quitfunction
-			}
-		}
-		if (currLett == '}')
-		{
-			if (countingStack.peek() == '{')
-			{
-				countingStack.pop()
-			}
-			else
-			{
-				//quitfunction
-			}
-		}
-		if (currLett == ')')
-		{
-			if (countingStack.peek() == '(')
-			{
-				countingStack.pop()
-			}
-			else
-			{
-				//quitfunction
-			}
-		}
-	}
-	if (countingStack.isEmpty())
-	{
-		//quitfunction
-	}
-	else
-	{
-		//quitfunction with a pop
+		cout << "run another file? y or n";
+		cin >> analysis;
 	}
 }
