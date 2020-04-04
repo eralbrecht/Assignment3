@@ -26,7 +26,9 @@ int main()
 		{
 			cout << "that file doesnt exist";
 		}
+
 		cout << "run another file? y or n";
 		cin >> analysis;
+		//this will quit out the analyze loop
 	}
 }

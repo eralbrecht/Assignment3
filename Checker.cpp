@@ -32,10 +32,13 @@ void Checker::synCheck(ifstream &readFile)
 		for (int i = 0; i < currString.size(); i++)
 		{
 			currLett = currString[i];
+			//this will push all the open brackets to the stack in order of encounter
 			if (currLett == '[' || currLett == '{' || currLett == '(')
 			{
 				countingStack.push(currLett);
 			}
+
+			//this will pop all the close brackets if they match an open bracket on the stack
 			if (currLett == ']')
 			{
 				if (countingStack.peek() == '[')
@@ -46,7 +49,7 @@ void Checker::synCheck(ifstream &readFile)
 				{
 					//quitfunction
 					cout << "line : " << lineCount << endl;
-					cout << "there is a ] that was never opened";
+					cout << "there is a ] that was not the last brace type to be opened";
 				}
 			}
 			if (currLett == '}')
@@ -59,7 +62,7 @@ void Checker::synCheck(ifstream &readFile)
 				{
 					//return (1)
 					cout << "line : " << lineCount << endl;
-					cout << "there is a } that was never opened";
+					cout << "there is a } that was not the last brace type to be opened";
 				}
 			}
 			if (currLett == ')')
@@ -72,7 +75,7 @@ void Checker::synCheck(ifstream &readFile)
 				{
 					//quitfunction
 					cout << "line : " << lineCount << endl;
-					cout << "there is a ) that was never opened";
+					cout << "there is a ) that was not the last brace type to be opened";
 				}
 			}
 		}
