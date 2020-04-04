@@ -1,5 +1,5 @@
-//2/25/2020
-//build a generic stack (he called it a vanilla stack)
+//Rose Albrecht ealbrecht@chapman.edu 2300456
+
 #include <iostream>
 #include<fstream>
 using namespace std;

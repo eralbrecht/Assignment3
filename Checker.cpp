@@ -1,3 +1,4 @@
+//Rose Albrecht ealbrecht@chapman.edu 2300456
 #include <iostream>
 using namespace std;
 #include "GenStack.h"

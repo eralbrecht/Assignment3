@@ -1,3 +1,4 @@
+//Rose Albrecht ealbrecht@chapman.edu 2300456
 #include "GenStack.h"
 using namespace std;
 //constructor(im really hoping that we never have a nest 500 deep...)
