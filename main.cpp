@@ -17,8 +17,6 @@ int main()
 		cin >> filename;
 		ifstream inputfile;
 		inputfile.open(filename);
-		//create an instance of the checker
-		Checker myCheck;
 		if (inputfile)
 		{
 			myCheck.synCheck(inputfile);

@@ -51,6 +51,7 @@ void Checker::synCheck(ifstream &readFile)
 					//quitfunction
 					cout << "line : " << lineCount << endl;
 					cout << "there is a ] that was not the last brace type to be opened";
+					exit(1);
 				}
 			}
 			if (currLett == '}')
@@ -64,6 +65,7 @@ void Checker::synCheck(ifstream &readFile)
 					//return (1)
 					cout << "line : " << lineCount << endl;
 					cout << "there is a } that was not the last brace type to be opened";
+					exit(1);
 				}
 			}
 			if (currLett == ')')
@@ -77,6 +79,7 @@ void Checker::synCheck(ifstream &readFile)
 					//quitfunction
 					cout << "line : " << lineCount << endl;
 					cout << "there is a ) that was not the last brace type to be opened";
+					exit(1);
 				}
 			}
 		}
@@ -89,5 +92,9 @@ void Checker::synCheck(ifstream &readFile)
 	{
 		cout << "reached end of file and " << countingStack.pop() << " was never closed" << endl;
 		//quitfunction with a pop
+		while (!countingStack.isEmpty())
+		{
+			countingStack.pop();
+		}
 	}
 }

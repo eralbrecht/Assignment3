@@ -5,7 +5,7 @@ using namespace std;
 GenStack::GenStack()
 {
 	//char myStack[500];
-	myStack = new char[500];
+	char* myStack = new char[500];
 	maxSize = 500;
 	top = -1;
 }
@@ -14,6 +14,7 @@ GenStack::~GenStack()
 {
 	//delete myStack;
 }
+//pushes something to the stack
 void GenStack::push(char d)
 {
 	if (top > 500)
@@ -28,6 +29,7 @@ void GenStack::push(char d)
 		//each time we increment and add an element our top will shift over 1
 	}
 }
+//returns the top value without removing it from the stack
 char GenStack::peek()
 {
 	if (top < 0)
@@ -41,6 +43,7 @@ char GenStack::peek()
 		//when you evaluate you have to move where the top value is so when we look at the top were ignoring stuff over the top value
 	}
 }
+//pops the top value
 char GenStack::pop()
 {
 	if (top < 0)
@@ -61,8 +64,9 @@ char GenStack::pop()
 bool GenStack::isFull(int maxSize)
 {
 	return(top == maxSize - 1);
-}
+}*/
+//tells us if the stack is empty
 bool GenStack::isEmpty()
 {
 	return (top == -1);
-}*/
+}

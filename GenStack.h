@@ -17,6 +17,7 @@ public:
 	bool isFull();
 	bool isEmpty();
 	char peek();
+	char* myStack;
 	//char myStack[500];
 	int maxSize;//max size of myStack
 	int top;//variable to keep track  of indicies representing the top of out stack
